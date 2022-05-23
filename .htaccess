@@ -1,0 +1,18 @@
+
+RewriteEngine on
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^sh\-earth\.be$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sh\-earth\.be$
+RewriteRule ^(.*)$ "https\:\/\/sh\-earth\.be\/$1" [R=301,L]
+RewriteCond %{HTTP_HOST} ^sh\-earth\.phy\.sx$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sh\-earth\.phy\.sx$
+RewriteRule ^(.*)$ "https\:\/\/sh\-earth\.be\/$1" [R=301,L]
+
